@@ -54,12 +54,12 @@ $posts = $sql->fetch();
               </div>
               <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
-                  <li class="active"><a href="#main-header">Home</a></li>
-                  <li class=""><a href="#feature">About</a></li>
-                  <li class=""><a href="#portfolio">Portfolio</a></li>
-                  <li class=""><a href="#testimonial">Testimonial</a></li>
+                  <li class="active"><a href="#main-header">Bas Bet</a></li>
+                  <li class=""><a href="#feature">Mag'liwmatlar</a></li>
+                  <li class=""><a href="#portfolio">Jumislar</a></li>
+                  <li class=""><a href="#testimonial">Idealar</a></li>
                   <li class=""><a href="#blog">Blog</a></li>
-                  <li class=""><a href="#contact">Contact Us</a></li>
+                  <li class=""><a href="#contact">Baylanis Ushin</a></li>
                 </ul>
               </div>
             </div>
@@ -135,6 +135,14 @@ $posts = $sql->fetch();
     <!---->
     <!---->
     <!---->
+    <?php
+          // require 'admin/db.php';
+                $sql2 = 'SELECT * FROM portfolio ORDER BY date DESC LIMIT 6';
+                $sql2 = $conn->prepare($sql2);
+                $sql2 -> execute();
+                $posts1 = $sql2->fetchAll();
+               
+                ?>
     <section id="portfolio" class="section-padding wow fadeInUp delay-05s">
       <div class="container">
         <div class="row">
@@ -143,16 +151,9 @@ $posts = $sql->fetch();
             <p class="sub-title pad-bt15"></p>
             <hr class="bottom-line">
           </div>
-          <div class="col-md-4 col-sm-6 col-xs-12 portfolio-item padding-right-zero mr-btn-15">
-          <?php
-          // require 'admin/db.php';
-                $sql2 = 'SELECT * FROM portfolio ORDER BY date DESC LIMIT 6';
-                $sql2 = $conn->prepare($sql2);
-                $sql2 -> execute();
-                $posts1 = $sql2->fetchAll();
-               
-                ?>
-                <?php foreach ($posts1 as $row) :?>
+          <?php foreach ($posts1 as $row) :?>
+          <div class="col-md-4 col-sm-16 col-xs-12 portfolio-item padding-right-zero mr-btn-15">
+          
             <figure>
               <img src="admin/portfolio/upload/<?=$row['img']?>" class="img-responsive">
               <figcaption>
@@ -190,12 +191,11 @@ $posts = $sql->fetch();
                 </p>
               </figcaption>
             </figure>
-            <?php endforeach;?>
           </div>
+          <?php endforeach;?>
           
-          </div>
         </div>
-      </div>
+        </div>
     </section>
     <!---->
     <!---->
