@@ -54,7 +54,7 @@ $posts = $sql->fetch();
               </div>
               <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
-                  <li class="active"><a href="#main-header">Bas Bet</a></li>
+                  <li class=""><a href="#main-header">Bas Bet</a></li>
                   <li class=""><a href="#feature">Mag'liwmatlar</a></li>
                   <li class=""><a href="#portfolio">Jumislar</a></li>
                   <li class=""><a href="#testimonial">Idealar</a></li>
@@ -199,7 +199,7 @@ $posts = $sql->fetch();
     </section>
     <!---->
     <!---->
-    <section id="testimonial" class="wow fadeInUp delay-05s">
+    <!-- <section id="testimonial" class="wow fadeInUp delay-05s">
       <div class="bg-testicolor">
         <div class="container section-padding">
           <div class="row">
@@ -238,7 +238,7 @@ $posts = $sql->fetch();
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
     <!---->
     <section id="blog" class="section-padding wow fadeInUp delay-05s">
       <div class="container">
@@ -284,19 +284,7 @@ $posts = $sql->fetch();
               ?>...</p>
                 </h2>
                 
-                <p><?php $str_len = strlen($row['text']);
-                if ($str_len > '100'){
-                  $row['text'] = mb_substr($row['text'], 0, 100);
-                  $i=strlen(trim($row['text']));
-                  $s = false;
-            while($s && $i>0) {
-                if (mb_substr($row['text'], $i-1, 1)==' ')
-                    $s = true;
-                $row['text'] = mb_substr($row['text'], 0, -1);
-                $i--;
-            }
-}
-          echo $row['text'];
+                <p><?php $str_le
               ?>...</p>
                 <a href="single_blog.php?id=<?=$row['id']?>" class="read-more">Tolig'iraq →</a>
               </div>
@@ -334,48 +322,7 @@ $posts = $sql->fetch();
               <!-- <form action="" method="post" role="form" class="contactForm">
                 <div class="col-md-6 padding-right-zero">
                   <div class="form-group">
-                    <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                    <div class="validation"></div>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
-                    <div class="validation"></div>
-                  </div>
-                </div>
-                <div class="col-md-12">
-                  <div class="form-group">
-                    <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-                    <div class="validation"></div>
-                  </div>
-                </div>
-                <div class="col-md-12">
-                  <div class="form-group">
-                    <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
-                    <div class="validation"></div>
-                  </div>
-                  <button type="submit" class="btn btn-primary btn-submit">SEND NOW</button>
-                </div>
-              </form> -->
-
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!---->
-    <!---->
-   
-    <!---->
-  </div>
-  <script src="js/jquery.min.js"></script>
-  <script src="js/jquery.easing.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/wow.js"></script>
-  <script src="js/jquery.bxslider.min.js"></script>
-  <script src="js/custom.js"></script>
-  <script src="contactform/contactform.js"></script>
+                    <input type="text" name="name" class="for
 
 </body>
 </html>
